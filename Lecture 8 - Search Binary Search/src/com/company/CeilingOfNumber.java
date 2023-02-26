@@ -26,4 +26,21 @@ public class CeilingOfNumber {
         }
         return ceiling;
     }
+
+    // Ceiling : Smallest of the numbers greater than or equal to target
+    private static int ceilingOfNumber2(int[] arr, int target) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start <= end){
+            int mid = start + (end-start)/2;
+
+            if (arr[mid]==target) return arr[mid];
+            else if(arr[mid] < target) start = mid+1;
+            else end = mid-1;
+        }
+
+        if (start==arr.length) return Integer.MAX_VALUE;
+        return arr[start];
+    }
 }

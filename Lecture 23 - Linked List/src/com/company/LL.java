@@ -125,8 +125,9 @@ public class LL {
         // Move head to next
         HEAD = HEAD.next;
         // If single element is there then update both
-        if (HEAD == null){
+        if (HEAD == TAIL){
             TAIL = null;
+            HEAD = null;
         }
         // Reduce the size
         SIZE--;

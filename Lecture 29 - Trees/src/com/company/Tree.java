@@ -37,21 +37,7 @@ public class Tree{
     public Tree(){
         root = null;
     }
-
-    // Print node
-    private void printNode(Node n){
-        if (n == null) return;
-
-        System.out.println(n.data);
-        printNode(n.left);
-        printNode(n.right);
-    }
-
-    // Print Tree
-    public void printTree(){
-        printNode(root);
-    }
-
+    
     // Take tree input using the recursion
     public void inputTree(Node n){
         if (n == null){   
@@ -96,7 +82,6 @@ public class Tree{
         q.add(temp);
         q.add(null);
 
-//        System.out.println(q);
         while(!q.isEmpty()){
             if (q.peek() == null){
                 System.out.println();
@@ -118,11 +103,47 @@ public class Tree{
                 q.remove();
             }
         }
-
-
-
-
+    }
+    
+    // Inorder traversal
+    public void inOrder(Node n){
+        if(n == null) return;
+        inOrder(n.left);
+        System.out.print(n.data);
+        inOrder(n.right);
     }
 
+    // Preorder traversal
+    public void preOrder(Node n){
+        if (n == null) return;
+        System.out.print(n.data);
+        preOrder(n.left);
+        preOrder(n.right);
+    }
 
+    // Postorder traversal
+    public void postOrder(Node n){
+        if (n == null) return;
+        postOrder(n.left);
+        postOrder(n.right);
+        System.out.print(n.data);
+    }
+    // Inorder traversal
+    public void inOrderTraversal(){
+        System.out.print("In-order traversal : ");
+        inOrder(root);
+        System.out.println();
+    }
+    // Preorder traversal
+    public void preOrderTraversal(){
+        System.out.print("Pre-order traversal : ");
+        preOrder(root);
+        System.out.println();
+    }
+    // Postorder traversal
+    public void postOrderTraversal(){
+        System.out.print("Post-order traversal : ");
+        postOrder(root);
+        System.out.println();
+    }
 }

@@ -7,7 +7,10 @@ public class Main {
 
         Tree t = new Tree();
         t.inputTreeMe();
-        t.printTree();
+    //    t.printTree();
         t.levelOrderTraversal();
+        t.inOrderTraversal();
+        t.postOrderTraversal();
+        t.preOrderTraversal();
     }
 }

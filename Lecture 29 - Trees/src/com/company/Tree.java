@@ -341,5 +341,13 @@ public class Tree{
             curr = curr.right;
 
             }
-        }
+    }
+
+
+    // Count leaf nodes
+    public int getLeafs(Node n) {
+        if (n == null) return 0;
+        if (n.left == null && n.right == null) return 1;
+        return getLeafs(n.left) + getLeafs(n.right);
+    }
 }

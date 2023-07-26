@@ -1,0 +1,42 @@
+# Graph - Follow lectures of abdul bari 
+
+# Basics of graph
+    - Introduction to graph
+    - Representation using Adjacency Matrix
+    - Representation using Adjacency List
+    - Comparison of both styles
+
+# Traversal
+    - BFS
+    - DFS
+    - Application of BFS and DFS
+
+# Detect Cycle in graph
+    - Cycle in Directed Graph : DFS
+    - Cycle in Directed Graph : BFS
+    - Cycle in Undirected Graph : DFS
+    - Cycle in Undirected Graph : BFS
+
+# Shortest path
+    - Shortest path in Unweighted graph
+    - Shortest path in DAG
+
+# Other Algo's
+    - Topological sorting using BFS (Kahn's algo)
+    - Topological sorting using DFS based algo
+
+# Minimum Spanning Tree
+    - Prims algo
+    - Kruskals algorithm
+
+# Find a shortest path
+    - Dijkstra algorithm
+    - Bellman ford algo
+    - Floyd warshall algo
+
+# Strongly connected component, Bridges and Articulation point 
+    - Kosaraju, Tarjan algo : Finding strongly connected components
+    - Articulation point    : After removing it graph is splited
+    - Bridges in graph      : After removing it graph is splited
+
+

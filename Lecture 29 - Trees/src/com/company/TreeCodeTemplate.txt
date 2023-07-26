@@ -1,0 +1,73 @@
+- Class :: Tree
+    
+    # Node
+    - Class :: Node
+        - Attribute :: data
+        - Attribute :: left
+        - Attribute :: right
+
+        - Constructor :: 1 - Data
+        - Constructor :: 2 - Data, Left, Right (#Optional)
+    
+    - Attribute :: root
+
+    # Input
+    - Method :: userInputUsingRecursion
+    - Method :: userInputUsingIteration (Queue)
+
+    # DFS Traversals (Recursive) 
+    - Method :: preorder 
+    - Method :: inorder
+    - Method :: postorder
+
+    # DFS Traversals (Iterative) 
+    - Method :: preorder
+    - Method :: inorder
+    - Method :: postorder
+
+    # Other tranversals
+    - Method :: Level order (Iterative) || BFS
+    - Method :: Level order (Recursive) || BFS
+    - Method :: Reverse Level Order Traversal
+    - Method :: Boundry Traversal
+    - Method :: Diagonal Travesal
+    - Method :: ZigZag traversal
+    - Method :: Vertical traversal
+    - Method :: Spiral traversal
+    - Method :: Morris traversal
+
+    # Views of tree
+    - Method :: Top View
+    - Method :: Bottom View
+    - Method :: Left View
+    - Method :: Right View
+
+    # Basic tree questions
+    - Method :: Height of tree
+    - Method :: Count of leaf nodes
+    - Method :: Print all the elements on the perticular depth
+    - Method :: Find the depth of the element
+    - Method :: Find the maximum/minimum depth of the leaf node
+    - Method :: Get maximum value from a tree
+    - Method :: Check tree is balanced or not : I will check that, I am balanced or not, if i am balanced then I will give you or return my height, if not then I will return as -1
+    - Method :: Diameter of the tree
+    - Method :: Determine two trees are identical or not
+    - Method :: Mirror tree
+    - Method :: Symmetric tree
+    - Method :: Children sum parent
+    - Method :: Check for BST
+    - Method :: Array to BST
+    - Method :: Largest value in each level of tree
+    - Method :: Maximum GCD of sibilings of a binary tree
+    - Method :: Inorder successor in BST
+    - Method :: Kth largest element in BST
+    - Method :: Lowest common ancestor of tree
+    - Method :: Sum of the longest bloodline
+    - Method :: Serialize and Deserialize a binary tree
+
+    # Standard Questions
+    - Method :: Construct a tree from Inorder and Preorder
+    - Method :: Construct a tree from Inorder and Postorder
+    - Method :: Minimum time to burn a tree
+    - Method :: Flatten a binary tree to linked list
+

@@ -1,6 +1,5 @@
 // Arrays 
 
-
 // ===== QUESTIONS =====
 
 // Q.1) Largest and Smallest element from an array
@@ -19,7 +18,6 @@ class Solution{
         return arr[arr.length-1];
     }
 }
-
 
 
 // :: A2 : Keep variable largest and smallest  || TC : O(n) || SC : O(1)

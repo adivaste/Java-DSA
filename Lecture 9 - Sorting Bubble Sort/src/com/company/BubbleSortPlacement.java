@@ -14,7 +14,7 @@ public class BubbleSortPlacement{
         boolean swapped = true;
         int swapTill = size;
 
-        for(int i=0; i<size && swapped == true; i++){
+        for(int i=0; i<size-1 && swapped == true; i++){
             swapped = false;
             for(int j=1; j<swapTill; j++){
                 if (arr[j-1] > arr[j]){

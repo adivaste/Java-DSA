@@ -16,80 +16,6 @@
 
 // --- SOLUTIONS ---
 
-// Q.0) Implement the Singly, Doubly and Circular linked list
-
-class SinglyLinkedList{
-
-    // NODE
-    class Node{
-        int data;
-        Node next;
-
-        public Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-
-        public Node(int data, Node next){
-            this.data = data;
-            this.next = next;
-        }
-    }
-
-    // HEAD
-    private Node head;
-
-    // CONSTRUCTOR
-    public SinglyLinkedList(){
-        this.head = null;
-    }
-
-    // INSERT 
-    public void insert(int data){
-        
-        Node newNode = new Node(data);
-
-        if (head == null){
-            head = newNode;
-        }
-        else{
-            Node temp = head;
-            while(temp.next != null){
-                temp = temp.next;
-            }
-            temp.next = newNode;
-        }
-    }
-
-    // DELETE
-    public Node delete(int data){
-        if(head == null) return null;
-        if(head.data == data ){
-            head = head.next;
-        }
-
-        Node prev = null;
-        Node curr = head;
-        while(curr != null && curr.data != data){
-            prev = curr;
-            curr = curr.next;
-        }
-        if (curr == null) return null;
-        prev.next = curr.next;
-        return curr;
-    }
-
-    // DISPLAY
-    public void display(){
-        Node temp = head;
-        while(temp != null){
-            System.out.print(" "+temp.data);
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-}
-
 // Q.1) Convert Binary Number in a Linked List to Integer
 
 // Approach 1 : Find the length of the linked list and just like we 
@@ -267,7 +193,7 @@ class MyHashSet {
 }
 
 // ==================================================================
-// Q. Design a HashMap
+// Q. Design a Hashset
 
 // Approach 1 :
 

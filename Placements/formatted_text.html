@@ -1,0 +1,65 @@
+<p>Enter the text you want to process: How to reverse linked list in java using a recursionTo  reverse  a  linked  list  using  recursion  in  Java ,  you  can  follow  these  steps :</p>
+
+<p>1 .  Create  a  class  for  the  Node  of  the  linked  list .</p>
+
+<p>```
+ class  Node  {
+      int  data ;
+      Node  next ;</p>
+
+<pre><code>  Node (int  data )  {
+      this .data  =  data ;
+      next  =  null ;
+  }
+</code></pre>
+
+<p>}
+ `<code></code></p>
+
+<p>2 .  Create  a  class  for  the  linked  list  and  define  a  method  to  reverse the  list  recursively .</p>
+
+<p>`<code></code>
+ class  LinkedList  {
+      Node  head ;</p>
+
+<pre><code>  void  reverse ()  {
+      head  =  reverse (head ,  null );
+  }
+
+  Node  reverse (Node  current ,  Node  previous )  {
+      if  ( current  ==  null )  {
+          return  previous ;
+      }
+
+      Node  next  =  current .next ;
+      current .next  =  previous ;
+      return  reverse (next ,  current);
+  }
+</code></pre>
+
+<p>}
+ ```</p>
+
+<p>In the <code>reverse</code>  method ,  we  pass  the  current  node  and  the  previous  node .  We  start  with  a  base  condition  that  if  the  current node is null ,  we  return  the  previous  node.  Otherwise ,  we  get  the  next  element  of  the  current  node ,  set  its  next  to  the  previous  node ,  and  call the <code>reverse</code>  method  recursively  with  the  next  node  and  the  current  node  as  arguments .</p>
+
+<p>3 .  Create  and  test  the  linked  list .</p>
+
+<p>`<code></code>
+ public  static  void  main (String []  args )  {
+      LinkedList  list  =  new  LinkedList ();
+      list .head  =  new  Node ( 1 );
+      list .head .next  =  new  Node ( 2 );
+      list .head .next .next  =  new  Node ( 3 );
+      list .head .next .next .next  =  new  Node ( 4 );</p>
+
+<pre><code>System.out .println (\ Original  linked  list :\      list .display ();
+
+  list .reverse ();
+
+  System .out .println (\ Re versed  linked  list :\      list .display ();
+</code></pre>
+
+<p>}
+ `<code></code></p>
+
+<p>Here ,  we  create  a  linked  list  with  four nodes  and call  the  <code>reverse</code> method  to reverse  it .  After ward ,  we  display  the  original  and  reversed  linked  lists  to  verify  that  the  reverse  operation  succeeded . </p>

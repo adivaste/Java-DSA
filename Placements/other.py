@@ -51,10 +51,10 @@ def convert_it_2(input_text):
     
         output = flattened_list
     
-        with open("index.html", "r") as f:
+        with open("index.html", "r", encoding='utf-8') as f:
             existing_content = f.read()
     
-        with open("index.html", "w") as f:
+        with open("index.html", "w", encoding='utf-8') as f:
             for i in output:
                 html_output = markdown2.markdown(i)
                 f.write(html_output)

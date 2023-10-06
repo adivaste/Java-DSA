@@ -19,10 +19,10 @@ def text_to_html(input_text):
 
     output = flattened_list
 
-    with open("index.html", "r") as f:
+    with open("index.html", "r", encoding='utf-8') as f:
         existing_content = f.read()
 
-    with open("index.html", "w") as f:
+    with open("index.html", "w", encoding='utf-8') as f:
         for i in output:
             html_output = markdown2.markdown(i)
             f.write(html_output)
@@ -96,7 +96,7 @@ class QueryHandler(FileSystemEventHandler):
         if event.src_path.endswith(".txt") and os.path.basename(event.src_path).startswith("selected_text"):
             # Process the newly created .txt file
             time.sleep(2)
-            with open(event.src_path, "r") as query_file:
+            with open(event.src_path, "r", encoding='utf-8') as query_file:
                 query_text = query_file.read()
                 updated_query_text = "(This is an aptitude exam question. Please read the question carefully and answer properly. For code questions, prefer Java.) " + query_text
                 print(":: Processing ==> " + query_text)
@@ -116,27 +116,31 @@ def process_recent_txt_file(folder_path, prefix="selected-text"):
         txt_files = [file for file in files if file.startswith(prefix) and file.endswith(".txt")]
 
         if txt_files:
-            # Get the most recent .txt file
-            most_recent_txt_file = max(txt_files, key=lambda x: os.path.getctime(os.path.join(folder_path, x)))
+            try:
+                # Get the most recent .txt file
+                most_recent_txt_file = max(txt_files, key=lambda x: os.path.getctime(os.path.join(folder_path, x)))
 
-            # Build the full path to the file
-            file_path = os.path.join(folder_path, most_recent_txt_file)
+                # Build the full path to the file
+                file_path = os.path.join(folder_path, most_recent_txt_file)
 
-            # Check if the file is newer than the last processed file
-            if last_processed_time is None or os.path.getctime(file_path) > last_processed_time:
-                # Process the file
-                with open(file_path, "r") as query_file:
-                    query_text = query_file.read()
-                    updated_query_text = "(This is an aptitude exam question. Please read the question carefully and answer properly. For code questions, prefer Java.) " + query_text
-                    print(":: Processing ==> " + query_text)
-                    # make_api_request(updated_query_text)
-                    convert_it_2(query_text)
+                # Check if the file is newer than the last processed file
+                if last_processed_time is None or os.path.getctime(file_path) > last_processed_time:
+                    # Process the file
+                    with open(file_path, "r", encoding='utf-8') as query_file:
+                        query_text = query_file.read()
+                        # updated_query_text = "(This is an aptitude exam question. Please read the question carefully and answer properly. For code questions, prefer Java.) " + query_text
+                        updated_query_text = "(This is an aptitude exam question. Please read the question carefully and answer properly. It may contains sql queries to write) " + query_text
+                        print(":: Processing ==> " + query_text)
+                        # make_api_request(updated_query_text)
+                        convert_it_2(query_text)
 
-                # Update the timestamp of the last processed file
-                last_processed_time = os.path.getctime(file_path)
+                    # Update the timestamp of the last processed file
+                    last_processed_time = os.path.getctime(file_path)
 
-                # Delete the processed file
-                os.remove(file_path)
+                    # Delete the processed file
+                    os.remove(file_path)
+            except:
+                pass
 
         # Wait for some time (e.g., 1 second) before checking again
         time.sleep(1)
@@ -145,7 +149,7 @@ def process_recent_txt_file(folder_path, prefix="selected-text"):
 if __name__ == "__main__":
     # Replace with the path to the folder where new files will arrive
     queries_folder = r'C:\Users\Admin\Downloads\SideKick-Downloads'
-    queries_folder = r'C:\Users\Admin\Downloads'
+    # queries_folder = r'C:\Users\Admin\Downloads'
 
     # Start observing for file changes
     # event_handler = QueryHandler()
